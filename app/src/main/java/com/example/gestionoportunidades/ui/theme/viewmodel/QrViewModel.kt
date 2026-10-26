@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.gestionoportunidades.data.repository.QrRepository
-import com.example.gestionoportunidades.model.QrResult
+import com.example.gestionoportunidades.data.local.QrResult
 
 class QrViewModel : ViewModel() {
     private val repository = QrRepository()

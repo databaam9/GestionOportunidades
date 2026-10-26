@@ -9,4 +9,6 @@ class OportunidadRepository(private val dao: OportunidadDao) {
     suspend fun obtenerPorId(id: Long) = dao.obtenerPorId(id)
     suspend fun guardar(oportunidad: OportunidadEntity) = dao.insertar(oportunidad)
     suspend fun actualizar(oportunidad: OportunidadEntity) = dao.actualizar(oportunidad)
+
+    suspend fun eliminar(id: Long) = dao.eliminarPorId(id)
 }

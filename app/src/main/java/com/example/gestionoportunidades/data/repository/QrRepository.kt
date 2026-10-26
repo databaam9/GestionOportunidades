@@ -1,6 +1,6 @@
 package com.example.gestionoportunidades.data.repository
 
-import com.example.gestionoportunidades.model.QrResult
+import com.example.gestionoportunidades.data.local.QrResult
 
 class QrRepository {
     fun processQrContent(content: String): QrResult {

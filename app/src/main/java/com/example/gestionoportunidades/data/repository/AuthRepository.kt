@@ -1,5 +1,5 @@
 package com.example.gestionoportunidades.data.repository
-import com.example.gestionoportunidades.model.Credential
+import com.example.gestionoportunidades.data.local.Credential
 class AuthRepository(
     private val validCredential: Credential = Credential.Admin
 ) {

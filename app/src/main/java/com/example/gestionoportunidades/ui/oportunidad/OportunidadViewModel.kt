@@ -13,19 +13,14 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-
 class OportunidadViewModel(app: Application) : AndroidViewModel(app) {
     private val repo = OportunidadRepository(AppDatabase.getInstance(app).oportunidadDao())
-
     var uiState by mutableStateOf(OportunidadUiState())
         private set
-
     val oportunidades: StateFlow<List<OportunidadEntity>> = repo.obtenerTodas()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     private var idActual: Long? = null
-
-    // limpiar errores al escribir
     fun onNombreChange(v: String) { uiState = uiState.copy(nombre = v, nombreError = null) }
     fun onTipoChange(v: String) { uiState = uiState.copy(tipo = v, tipoError = null) }
     fun onDescripcionChange(v: String) { uiState = uiState.copy(descripcion = v, descripcionError = null) }
@@ -47,7 +42,6 @@ class OportunidadViewModel(app: Application) : AndroidViewModel(app) {
             }
         }
     }
-
     fun validarYGuardar() {
         val s = uiState
         val nombreErr = if (s.nombre.isBlank()) "Requerido" else null
@@ -64,7 +58,6 @@ class OportunidadViewModel(app: Application) : AndroidViewModel(app) {
             )
             return
         }
-
         viewModelScope.launch {
             uiState = uiState.copy(guardando = true)
             val entity = OportunidadEntity(
@@ -75,6 +68,11 @@ class OportunidadViewModel(app: Application) : AndroidViewModel(app) {
             )
             if (idActual == null) repo.guardar(entity) else repo.actualizar(entity)
             uiState = uiState.copy(guardando = false, guardadoExitosamente = true)
+        }
+    }
+    fun eliminarOportunidad(id: Long) {
+        viewModelScope.launch {
+            repo.eliminar(id)
         }
     }
 }

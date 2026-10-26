@@ -1,4 +1,4 @@
-package com.example.gestionoportunidades.model
+package com.example.gestionoportunidades.data.local
 
 data class Credential(val username: String, val password: String) {
     companion object {
