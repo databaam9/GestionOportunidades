@@ -1,7 +1,5 @@
 # Gestión de Oportunidades
 
-Aplicación móvil Android para el registro y seguimiento de oportunidades comerciales corporativas, desarrollada para el encargo DSY1105.
-
 ## Integrantes
 
 - Joshua Rios
@@ -35,11 +33,3 @@ El proyecto sigue el patrón MVVM:
 
 1. Cámara del dispositivo (CameraX + ML Kit) para escanear códigos QR.
 2. Galería del dispositivo (selector de fotos del sistema) para adjuntar evidencia fotográfica.
-
-## Cómo ejecutar el proyecto
-
-1. Clonar este repositorio.
-2. Abrir la carpeta del proyecto en Android Studio.
-3. Esperar a que Gradle sincronice las dependencias.
-4. Ejecutar la aplicación en un emulador o dispositivo físico con Android 7.0 (API 24) o superior.
-5. Iniciar sesión con el usuario `admin` y la contraseña `123`.
