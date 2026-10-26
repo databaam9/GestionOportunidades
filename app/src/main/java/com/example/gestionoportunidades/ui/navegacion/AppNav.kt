@@ -9,7 +9,7 @@ import androidx.navigation.navArgument
 import com.example.gestionoportunidades.ui.oportunidad.ListaOportunidadesScreen
 import com.example.gestionoportunidades.ui.oportunidad.OportunidadFormScreen
 import com.example.gestionoportunidades.view.DrawerMenu
-import com.example.gestionoportunidades.ui.theme.HomeScreen
+import com.example.gestionoportunidades.ui.login.HomeScreen
 
 @Composable
 fun AppNav() {

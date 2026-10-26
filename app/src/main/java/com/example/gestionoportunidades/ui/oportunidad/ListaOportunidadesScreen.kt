@@ -62,9 +62,12 @@ fun ListaOportunidadesScreen(
                 Modifier.padding(pad).fillMaxSize().padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(lista) { op ->
+                items(lista, key = { it.id }) { op ->
                     Card(
-                        Modifier.fillMaxWidth().clickable { onEditar(op.id) }
+                        Modifier
+                            .fillMaxWidth()
+                            .animateItem()
+                            .clickable { onEditar(op.id) }
                     ) {
                         Row(
                             modifier = Modifier

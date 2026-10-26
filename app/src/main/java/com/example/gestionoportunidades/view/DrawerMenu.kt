@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationDrawerItem
@@ -62,7 +62,6 @@ fun DrawerMenu(
                 )
             }
 
-
             item {
                 NavigationDrawerItem(
                     label = { Text("Cerrar Sesión") },
@@ -74,7 +73,7 @@ fun DrawerMenu(
                     },
                     icon = {
                         Icon(
-                            Icons.Default.Star,
+                            Icons.AutoMirrored.Filled.ExitToApp,
                             contentDescription = "Cerrar Sesión"
                         )
                     }
